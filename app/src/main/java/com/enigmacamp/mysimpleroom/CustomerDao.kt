@@ -10,6 +10,9 @@ interface CustomerDao {
     @Query("SELECT * FROM customer")
     fun getAll(): List<Customer>
 
+    @Query("SELECT * FROM customer where uid=:id")
+    fun getCustomerById(id: Int): Customer
+
     @Insert
     fun insert(customer: Customer)
 
